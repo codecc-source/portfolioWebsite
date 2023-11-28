@@ -3,160 +3,84 @@ body, html {
     margin: 0%;
     padding: 0%;
     overflow-x: hidden;
-  }
-
-  .bgimg-1 {
+    background-image: url("../images/bg-01.png");
     background-position: center;
     background-size: cover;
-    background-image: url("../EndTerm/images/bg-01.png");
-    height: 112%;
   }
-
-h1
-{
+  
+  .container-fluid {
+    padding: 0%;
+  }
+  
+  .toplinks {
     font-family: 'Times New Roman', Times, serif;
-    font-size: auto;
-    color: #ffffff;
-}
-
-.h1a
-{
+    font-size: 2vw;
+    color: white;
+  }
+  .toplinks img {
+    width: 100%;
+  }
+  .toplinks a {
     font-family: 'Courier New', monospace;
-    font-size: auto;
+    font-size: 2vw;
     color: #ffffff;
-}
-
-.h2a
-{
-    font-family: 'Courier New', monospace;
-    font-size: auto;
     text-decoration: none;
-    color: #ffffff;
-}
-
-.h2a:hover
-{
-    font-family: 'Courier New', monospace;
-    font-size: auto;
+  }
+  .toplinks a:hover {
+    font-size: 2.3vw;
     border: none;
-    padding: 20px 18px;
-    text-decoration: underline;
     background-color: #ffffff;
     color: #000000;
-}
+  }
+  .toplinks a:not(:last-child) {
+    margin-right: 20px;
+    border-right: 1px solid rgb(255, 255, 255);
+    padding-right: 20px; 
+  }
 
-.work
-{
-    font-family: 'Courier New', monospace;
-    font-size:auto;
-    text-decoration: none;
-    color: #ffffff;
-    text-align: center;
-}
+  .black-bg {
+    background-color: #000; 
+  }
 
-.work:hover
-{
-    font-family: 'Courier New', monospace;
-    font-size: 120%;
-    color: #ffffff;
-    text-align: center;
-}
-
-h2
-{
-    font-family: 'Courier New', monospace;
-    font-size: auto;
-    color: #ffffff;
-}
-
-.h3
-{
-    font-family: 'Courier New', monospace;
-    font-size: auto;
-}
-
-.footer-link
-{
-    font-family: 'Courier New', monospace;
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.footer-link:hover
-{
-    font-family: 'Courier New', monospace;
-    text-decoration: underline;
-    color: #ffffff;
-}
-
-.container-fluid
-{
-    padding: 0%;
-}
-
-.text-bg
-{
-    background-image: url(../images/text-bg.png);
-    position: absolute;
-    width: 38%;
-    opacity: 0.7;
-    height: 130px;
-}
-
-.text-bg2
-{
-    background-image: url(../images/text-bg.png);
-    position: absolute;
-    width: 39%;
-    opacity: 0.7;
-    height: 150px;
-}
-
-.text-bg2a
-{
-    background-image: url(../images/text-bg.png);
-    position: absolute;
+  .black-bg a {
+    color: #fff; 
+  }
+   
+  .socialLinks {
+    font-size: 1.2vw;
+    position: fixed;
+    bottom:3%;
     width: 100%;
-    opacity: 0.7;
-    height: 150px;
-}
-
-
-.text-bg3
-{
-    background-image: url(../images/text-bg.png);
-    position: absolute;
-    width: 100%;
-    opacity: 0.6;
     height: auto;
-}
-
-.black-bg
-{
-    background-color: #000000;
-    height: 100%;
-}
-
-
-.text-main
-{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  } 
+  .socialLinks a {
+    margin: 0 10px; 
+    color: #fff; 
     text-decoration: none;
-    color: #FFFF;
-    font-size: auto;
-}
-
-
-.logo
-{
+    font-size: 1.2;
+  }
+  .socialLinks a:hover {
+    text-decoration: underline;
+    color: plum;
+  }
+  .socialLinks:before {
+    content: "";
     position: absolute;
+    top: -5px;
+    left: 50%;
     width: 100%;
-}
-
-.img-bg
-{
-    background-image: url(../images/text-bg.png);
-    position: absolute;
-    width: 100%;
-    opacity: 0.6;
-    height: 100%;
-}
+    height: 2px; 
+    background-color: plum; 
+    transform: translateX(-50%);
+  }
+  .socialLinks a:not(:last-child) {
+    margin-right: 0px;
+    border-right: 1px solid plum;
+    padding-right: 10px; 
+  }
+  
