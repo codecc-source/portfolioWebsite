@@ -14,9 +14,32 @@ body, html {
   
   .toplinks {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 2vw;
+    font-size: 1.5vw;
     color: white;
+    --g: 1px;    
+    --b: 6px;    
+    --c: #ffffff; 
+    padding-left: 8%;
+    padding-right: 8%;
+    --_c: #0000 0 25%, var(--c) 0 50%;
+    --_g1: repeating-linear-gradient(90deg ,var(--_c)) repeat-x;
+    --_g2: repeating-linear-gradient(180deg,var(--_c)) repeat-y;
+    background:
+      var(--_g1) var(--_p, 25%) 0   ,var(--_g2) 0    var(--_p,125%),
+      var(--_g1) var(--_p,125%) 100%,var(--_g2) 100% var(--_p, 25%);
+    background-size: 200% var(--b),var(--b) 200%;
+    cursor: po;
+    filter: grayscale(50%);
+    transition: .3s;
+    border: none;
   }
+  .toplinks:hover {
+    --_p: 75%;
+    filter: grayscale(0%);
+    --c: #f700ff;
+    color: #f700ff;
+  }
+  
   .toplinks img {
     width: 100%;
   }
@@ -25,12 +48,6 @@ body, html {
     font-size: 2vw;
     color: #ffffff;
     text-decoration: none;
-  }
-  .toplinks a:hover {
-    font-size: 2.3vw;
-    border: none;
-    background-color: #ffffff;
-    color: #000000;
   }
   .toplinks a:not(:last-child) {
     margin-right: 20px;
@@ -84,3 +101,7 @@ body, html {
     padding-right: 10px; 
   }
   
+  .placeholderShiz{
+    color: aqua;
+    font-size: 6vw;
+  }
