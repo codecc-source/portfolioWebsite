@@ -6,12 +6,10 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const pages = ['WORKS', 'ABOUT', 'CONTACT'];
 
@@ -41,9 +39,16 @@ function NavigationBar() {
     setAnchorElUser(null);
   };
 
+  const theme = createTheme({
+    typography: {
+      fontFamily: 'Silkscreen, sans-serif',
+    },
+  });
+  
+
   return (
-    <AppBar position="static">
-        <Container maxWidth="xl">
+    <ThemeProvider theme={theme}>
+    <AppBar position="static" sx={{alignItems: 'center'}}>
         <Toolbar disableGutters sx={{backgroundColor: "black"}}>
           <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }}>
           <img 
@@ -58,7 +63,6 @@ function NavigationBar() {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'Bebas Neue',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'white',
@@ -118,7 +122,6 @@ function NavigationBar() {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'Roboto',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
@@ -138,7 +141,6 @@ function NavigationBar() {
                   color: clickedPage === page ? 'aqua' : 'white',
                   backgroundColor: clickedPage === page ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
                   display: 'block',
-                  fontFamily: 'Roboto',
                   fontSize: '1.5rem',
                   '&:hover': {
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -150,8 +152,8 @@ function NavigationBar() {
             ))}
           </Box>
         </Toolbar>
-      </Container>
     </AppBar>
+    </ThemeProvider>
   );
 }
 export default NavigationBar;

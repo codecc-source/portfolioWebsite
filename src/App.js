@@ -1,9 +1,10 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import './App.css';
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim";
 import NavigationBar from './NavigationBar';
 import { Box } from '@mui/material';
+//import CircularProgress from '@mui/material/CircularProgress';
 
 function App() {
   const particlesInit = useCallback(async engine => {
@@ -14,6 +15,19 @@ function App() {
   const particlesLoaded = useCallback(async container => {
       console.log(container);
   }, []);
+
+//   useEffect(()=> {
+//     const onPageLoad = () => {
+//       alert("Page loaded");
+//     };
+
+//     if (document.readyState === 'complete') {
+//       onPageLoad();
+//     } else {
+//       window.addEventListener('load', onPageLoad, false);
+//       return () => window.removeEventListener('load', onPageLoad);
+//     }
+//   }, []); //Do some loading animation when page is not fully loaded
 
   return (
     <div>
@@ -95,20 +109,6 @@ function App() {
             <NavigationBar/>
           </Box> 
           
-
-    <div  style={{zIndex : 1000, display: 'flex'}}>
-      <div>         
-        <div className="socialLinks text-center">
-          <div>
-            <a style={{ color: 'rgb(215, 89, 246)' }}>Contact Us @</a>
-            <a href="#">FacebookCompanyLink</a>
-            <a href="#">InstagramCompanyLink</a>
-            <a href="#">GMailCompanyLink</a>
-            <a href="#">LinkedInCompanyLink</a>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   );
 }
