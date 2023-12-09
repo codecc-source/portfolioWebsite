@@ -48,10 +48,10 @@ function App() {
 //   }, []); //Do some loading animation when page is not fully loaded
 
 return (
-  <Box>
-    {/* <Box>
+  <Box className="custom-cursor" sx={{ height: '100vh', width: '100vw' }}>
+    <Box>
       <BackgroundParticles/>
-    </Box> */}
+    </Box>
 
     {/*Make the content be on top*/}
 
