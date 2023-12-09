@@ -12,12 +12,17 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const pages = ['WORKS', 'ABOUT', 'CONTACT'];
 
-function NavigationBar() {
+function NavigationBar({onPageClick}) {
   const [clickedPage, setClickedPage] = React.useState(null);
 
   const handlePageClick = (page) => {
     setClickedPage(page);
     handleCloseNavMenu();
+    if (page === 'HOME') {
+      onPageClick('HOME');
+    } else {
+      onPageClick(page);
+    }
   };
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -26,10 +31,7 @@ function NavigationBar() {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
+  
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
@@ -60,7 +62,7 @@ function NavigationBar() {
             <Typography
               noWrap
               component="a"
-              href="#app-bar-with-responsive-menu"
+              href="#placeholder"
               sx={{
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
@@ -73,6 +75,7 @@ function NavigationBar() {
                   color: '#FFFF00',
                 },
               }}
+              onClick={() => handlePageClick('HOME')}
             >
               HOME
             </Typography> 

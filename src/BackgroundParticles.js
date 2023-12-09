@@ -83,7 +83,7 @@ function BackgroundParticles() {
                         value: 0.5,
                     },
                     shape: {
-                        type: "square",
+                        type: ["triangle", "circle", "square"],
                     },
                     size: {
                         value: { min: 1, max: 5 },
