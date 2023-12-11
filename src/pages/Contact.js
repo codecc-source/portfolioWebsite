@@ -1,10 +1,34 @@
 import React from 'react';
+import { Box, Grid, Typography } from '@mui/material';
 
 function Contact() {
   return (
-    <div style={{color: 'blue'}}>
-      <h1>Contact Page</h1>
-    </div>
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '70vh',
+      }}
+    >
+      <Box
+        sx={{
+          backgroundColor: 'rgba(255, 255, 255, 0.5)',
+          padding: '5vh',
+          margin: '20px',
+          borderRadius: '20px',
+          textAlign: 'center',
+        }}
+      >
+        <Grid container justifyContent="center">
+          <Grid item xs={12}>
+            <Typography variant="h4" style={{ color: 'white' }} id="contact">
+              Contact Page
+            </Typography>
+          </Grid>
+        </Grid>
+      </Box>
+    </Box>
   );
 }
 

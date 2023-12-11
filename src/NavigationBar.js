@@ -12,32 +12,22 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const pages = ['WORKS', 'ABOUT', 'CONTACT'];
 
-function NavigationBar({onPageClick}) {
+function NavigationBar({ onPageClick }) {
   const [clickedPage, setClickedPage] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handlePageClick = (page) => {
     setClickedPage(page);
     handleCloseNavMenu();
-    if (page === 'HOME') {
-      onPageClick('HOME');
-    } else {
-      onPageClick(page);
-    }
+    onPageClick(page === 'HOME' ? 'HOME' : page);
   };
-
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  
+
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   const theme = createTheme({
@@ -45,134 +35,144 @@ function NavigationBar({onPageClick}) {
       fontFamily: 'Silkscreen, sans-serif',
     },
   });
-  
 
   return (
     <ThemeProvider theme={theme}>
-      <AppBar position="static" sx={{alignItems: 'center'}}>
-          <Toolbar disableGutters>
+      <AppBar position="static" sx={{ alignItems: 'center' }}>
+        <Toolbar disableGutters>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }}>
+            <img
+              src={process.env.PUBLIC_URL + '/images/logo.png'}
+              style={{ width: '150px', height: '100px' }}
+              alt="Logo"
+            />
+          </Box>
 
-            <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 2}}>
-              <img 
-                src={process.env.PUBLIC_URL + '/images/logo.png'}
-                style={{width: '150px', height: '100px'}}
-                />
-            </Box>
+          <Typography
+            noWrap
+            component="a"
+            href={window.location.pathname}
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'white',
+              textDecoration: 'none',
+              fontSize: '4rem',
+              '&:hover': {
+                color: '#FFFF00',
+              },
+            }}
+            onClick={() => handlePageClick('HOME')}
+          >
+            HOME
+          </Typography>
 
-            <Typography
-              noWrap
-              component="a"
-              href="#placeholder"
-              sx={{
-                mr: 2,
-                display: { xs: 'none', md: 'flex' },
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'white',
-                textDecoration: 'none',
-                fontSize: '4rem',
-                '&:hover': {
-                  color: '#FFFF00',
-                },
-              }}
-              onClick={() => handlePageClick('HOME')}
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
             >
-              HOME
-            </Typography> 
-
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
               <MenuIcon />
-              </IconButton>
+            </IconButton>
 
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: 'block', md: 'none' }, opacity: '0.8',
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography 
-                      textAlign="center" sx={{fontSize: '1rem', color: 'black', 
-                      ":hover": {color: 'blue'}}}>{page}
-                    </Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-
-            <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}>
-              <img 
-                src={process.env.PUBLIC_URL + '/images/logo.png'}
-                style={{width: '90px', height: '60px'}}
-                />
-            </Box>
-
-            <Typography
-              noWrap
-              component="a"
-              href="#palceholder plng to"
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
               sx={{
-                mr: 2,
-                display: { xs: 'flex', md: 'none' },
-                flexGrow: 1,
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
-                fontSize: '3rem',
-                ":hover": {
-                  color: '#FFFF00',
-                },
+                display: { xs: 'block', md: 'none' },
+                opacity: '0.8',
               }}
             >
-              HOME
-            </Typography>
-            
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={() => handlePageClick(page)}
-                  sx={{
-                    my: 2,
-                    color: clickedPage === page ? 'black' : 'white',
-                    backgroundColor: clickedPage === page ? 'rgba(255, 255, 0, 1)' : 'transparent',
-                    display: 'block',
-                    fontSize: '1.5rem',
-                    '&:hover': {
+                <MenuItem key={page} onClick={() => handlePageClick(page)}>
+                  <Typography
+                    textAlign="center"
+                    sx={{
+                      fontSize: '1rem',
                       color: 'black',
-                      backgroundColor: 'rgba(255, 255, 0, 0.7)',
-                    },
-                  }}
-                >
-                  {page}
-                </Button>
+                      ':hover': { color: 'blue' },
+                    }}
+                  >
+                    {page}
+                  </Typography>
+                </MenuItem>
               ))}
-            </Box>
-          </Toolbar>
+            </Menu>
+          </Box>
+
+          <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}>
+            <img
+              src={process.env.PUBLIC_URL + '/images/logo.png'}
+              style={{ width: '90px', height: '60px' }}
+              alt="Logo"
+            />
+          </Box>
+
+          <Typography
+            noWrap
+            component="a"
+            href="#palceholder plng to"
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+              fontSize: '3rem',
+              ':hover': {
+                color: '#FFFF00',
+              },
+            }}
+            onClick={() => handlePageClick('HOME')}
+          >
+            HOME
+          </Typography>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={() => handlePageClick(page)}
+                sx={{
+                  my: 2,
+                  color: clickedPage === page ? 'black' : 'white',
+                  backgroundColor:
+                    clickedPage === page ? 'rgba(255, 255, 0, 1)' : 'transparent',
+                  display: 'block',
+                  fontSize: '1.5rem',
+                  '&:hover': {
+                    color: 'black',
+                    backgroundColor: 'rgba(255, 255, 0, 0.7)',
+                  },
+                }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
       </AppBar>
     </ThemeProvider>
   );
 }
+
 export default NavigationBar;

@@ -6,8 +6,7 @@ import BackgroundParticles from './BackgroundParticles';
 import Works from './pages/Works';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Home from './pages/HomeDefault'
-import zIndex from '@mui/material/styles/zIndex';
+import HomeDefault from './pages/HomeDefault';
 //import CircularProgress from '@mui/material/CircularProgress';
 
 function App() {
@@ -20,16 +19,14 @@ function App() {
   const renderPageContent = () => {
     switch (currentPage) {
       case 'WORKS':
-        return <Works />;
+        return <Works/>;
       case 'ABOUT':
-        return <About />;
+        return <About/>;
       case 'CONTACT':
-        return <Contact />;
+        return <Contact/>;
       default:
         return (
-          <Box sx={{color: 'blue'}}>
-            <h1>HOME page</h1>
-          </Box>
+         <HomeDefault/>
         );
     }
   };
@@ -56,7 +53,7 @@ return (
         <NavigationBar onPageClick={handlePageClick} />
       </Box>
 
-      <Box sx={{ position: 'relative', zIndex: 3 }}>
+      <Box sx={{ position: 'relative', zIndex: 2 }}>
         {renderPageContent()}
       </Box>
     </div>
