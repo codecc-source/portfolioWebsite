@@ -48,23 +48,20 @@ function App() {
 //   }, []); //Do some loading animation when page is not fully loaded
 
 return (
-  <Box className="custom-cursor" sx={{ height: '100vh', width: '100vw' }}>
-    <Box>
-      <BackgroundParticles/>
-    </Box>
+  <Box className="custom-cursor" sx={{ height: '100vh', width: '100vw', position: 'relative' }}>
+    <div style={{ position: 'absolute', zIndex: 1, width: '100%', height: '100%' }}>
+      <BackgroundParticles />
 
-    {/*Make the content be on top*/}
+      <Box sx={{ backgroundColor: 'black' }}>
+        <NavigationBar onPageClick={handlePageClick} />
+      </Box>
 
-
-    <Box sx={{ backgroundColor: 'black'}}>
-      <NavigationBar onPageClick={handlePageClick} />
-    </Box>
-
-    <Box sx={{ zIndex: '-1' }}>
-      {renderPageContent()}
-    </Box>
-
+      <Box sx={{ position: 'relative', zIndex: 3 }}>
+        {renderPageContent()}
+      </Box>
+    </div>
   </Box>
 );
 }
+
 export default App;
