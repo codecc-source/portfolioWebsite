@@ -40,7 +40,7 @@ function Contact() {
                     style={{ width: '50px', height: '50px' }}
                     alt="Logo"
                   />
-                  <a style={{fontSize: '1.5rem'}}> carlitotingson.work@gmail.com</a>
+                  <a style={{fontSize: '1.5rem'}}> email@gmail.com</a>
                 </Box>
 
                 <Box id={"linkedIn"} sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }}>
