@@ -20,7 +20,7 @@ function Contact() {
     >
       <Box
         sx={{
-          backgroundColor: 'rgba(255, 255, 255, 0.5)',
+          background: 'linear-gradient(45deg, rgba(254,254,51, 0.1) 0%, rgba(0, 128, 255, 0.1) 100%)',
           padding: '5vh',
           margin: '20px',
           borderRadius: '20px',
@@ -31,7 +31,7 @@ function Contact() {
           <Grid container justifyContent="center">
             <Grid item xs={12}>
               <Typography variant="h4" style={{ color: 'white' }} id="contact">
-                Contact Page
+                Contact me through:
               </Typography>
 
               <Typography component="div" id="emailLink" sx={{ textAlign: 'center', mt: 2 }}>
@@ -40,7 +40,7 @@ function Contact() {
                   style={{ width: '50px', height: '50px' }}
                   alt="Logo"
                 />
-                <a style={{ fontSize: '1.5rem', display: 'block' }}> email@gmail.com</a>
+                <a style={{ fontSize: '1.5rem', display: 'block', color: 'white' }}> email@gmail.com</a>
               </Typography>
 
               <Typography component="div" id="linkedIn" sx={{ textAlign: 'center', mt: 2 }}>
