@@ -27,47 +27,46 @@ function Contact() {
           textAlign: 'center',
         }}
       >
-      
-      <ThemeProvider theme={theme}>
-        <Grid container justifyContent="center">
+        <ThemeProvider theme={theme}>
+          <Grid container justifyContent="center">
             <Grid item xs={12}>
               <Typography variant="h4" style={{ color: 'white' }} id="contact">
-                Contact Page 
+                Contact Page
+              </Typography>
 
-                <Box id={"emailLink"} sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }}>
-                  <img
-                    src={process.env.PUBLIC_URL + '/images/email.png'}
-                    style={{ width: '50px', height: '50px' }}
-                    alt="Logo"
-                  />
-                  <a style={{fontSize: '1.5rem'}}> email@gmail.com</a>
-                </Box>
+              <Typography component="div" id="emailLink" sx={{ textAlign: 'center', mt: 2 }}>
+                <img
+                  src={process.env.PUBLIC_URL + '/images/email.png'}
+                  style={{ width: '50px', height: '50px' }}
+                  alt="Logo"
+                />
+                <a style={{ fontSize: '1.5rem', display: 'block' }}> email@gmail.com</a>
+              </Typography>
 
-                <Box id={"linkedIn"} sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }}>
-                  <img
-                    src={process.env.PUBLIC_URL + '/images/linked.png'}
-                    style={{ width: '50px', height: '50px' }}
-                    alt="Logo"
-                  />
-                  <a style={{ fontSize: '2rem' }} href='https://www.linkedin.com/in/carlito-jr-tingson-a00300275'>
-                    linkedIn
-                  </a>
-                </Box>
+              <Typography component="div" id="linkedIn" sx={{ textAlign: 'center', mt: 2 }}>
+                <img
+                  src={process.env.PUBLIC_URL + '/images/linked.png'}
+                  style={{ width: '50px', height: '50px' }}
+                  alt="Logo"
+                />
+                <a style={{ fontSize: '2rem', display: 'block' }} href="https://www.linkedin.com/in/carlito-jr-tingson-a00300275">
+                  LinkedIn
+                </a>
+              </Typography>
 
-                <Box id={"githubLink"} sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }}>
-                  <img
-                    src={process.env.PUBLIC_URL + '/images/github.png'}
-                    style={{ width: '50px', height: '50px' }}
-                    alt="Logo"
-                  />
-                  <a style={{ fontSize: '2rem' }} href='https://github.com/codecc-source'>
-                    github
-                  </a>
-                </Box>
-            </Typography>
+              <Typography component="div" id="githubLink" sx={{ textAlign: 'center', mt: 2 }}>
+                <img
+                  src={process.env.PUBLIC_URL + '/images/github.png'}
+                  style={{ width: '50px', height: '50px' }}
+                  alt="Logo"
+                />
+                <a style={{ fontSize: '2rem', display: 'block' }} href="https://github.com/codecc-source">
+                  GitHub
+                </a>
+              </Typography>
+            </Grid>
           </Grid>
-        </Grid>
-      </ThemeProvider>
+        </ThemeProvider>
       </Box>
     </Box>
   );
