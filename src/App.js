@@ -8,7 +8,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import HomeDefault from './pages/HomeDefault';
 import AnimatedCursor from 'react-animated-cursor';
-//import CircularProgress from '@mui/material/CircularProgress';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('HOME');
@@ -31,19 +31,6 @@ function App() {
         );
     }
   };
-
-//   useEffect(()=> {
-//     const onPageLoad = () => {
-//       alert("Page loaded");
-//     };
-
-//     if (document.readyState === 'complete') {
-//       onPageLoad();
-//     } else {
-//       window.addEventListener('load', onPageLoad, false);
-//       return () => window.removeEventListener('load', onPageLoad);
-//     }
-//   }, []); //Do some loading animation when page is not fully loaded
 
 return (
   <div>
@@ -77,7 +64,16 @@ return (
         </Box>
 
         <Box sx={{ position: 'relative', zIndex: 2 }}>
-          {renderPageContent()}
+          <AnimatePresence exitBeforeEnter>
+            <motion.div
+              key={currentPage}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 50 }}
+            >
+              {renderPageContent()}
+            </motion.div>
+          </AnimatePresence>
         </Box>
       </div>
     </Box>
