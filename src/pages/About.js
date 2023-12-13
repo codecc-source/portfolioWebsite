@@ -12,10 +12,10 @@ function About() {
   });
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 50 }}
+    <motion.div style={{overflow: 'hidden'}}
+      initial={{ width: 0 }}
+      animate={{ width: "100%"}}
+      exit={{ x: window.innerWidth, transition: {duration: 0.1}}}
     >
       <ThemeProvider theme={theme}>
         <Box
