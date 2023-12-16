@@ -53,7 +53,7 @@ function Works() {
                 </Typography>
                 <img
                   src="./images/thesis.png"
-                  alt="Example Image 1"
+                  alt="Thesis"
                   style={{ width: '500px', height: '300px', maxWidth: '600px', marginTop: '20px' }}
                 />
               </Grid>
@@ -76,7 +76,7 @@ function Works() {
                 </Typography>
                 <img
                   src="./images/reviewerApp.png"
-                  alt="Example Image 1"
+                  alt="Reviewer App"
                   style={{ width: '500px', height: '300px', maxWidth: '600px', marginTop: '20px' }}
                 />
               </Grid>
@@ -99,7 +99,7 @@ function Works() {
                 </Typography>
                 <img
                   src="./images/quizMaster.png"
-                  alt="Example Image 1"
+                  alt="Quiz Master"
                   style={{ width: '300px', height: '600px', maxWidth: '600px', marginTop: '20px' }}
                 />
               </Grid>
