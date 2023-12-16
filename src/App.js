@@ -56,7 +56,7 @@ return (
       ]}
     />
     <Box sx={{ height: '100vh', width: '100vw', position: 'relative' }}>
-      <div style={{ position: 'absolute', zIndex: 1, width: '100%', height: '100%', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', zIndex: 1, width: '100%', height: '100%'}}> {/*, overflow: 'hidden'  */}
         <BackgroundParticles />
 
         <Box sx={{ backgroundColor: 'black' }}>
@@ -71,8 +71,9 @@ return (
             animate={{ width: "100%"}}
             exit={{ x: window.innerWidth, transition: {duration: 0.1}}}
           >
-            {renderPageContent()}
+            {/*{renderPageContent()} */}
           </motion.div>
+          {renderPageContent()}
         </AnimatePresence>
         </Box>
       </div>
