@@ -79,7 +79,7 @@ function Works() {
                   </Typography>
                 </Grid>
                 <ReactPlayer
-                  url="/portfoliowebsite/images/teaser.mov"
+                  url="/images/teaser.mp4"
                   width="80%"
                   height="auto"
                   controls
