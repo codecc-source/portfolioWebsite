@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '../App.css';
 import { Box, Grid, Typography } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { motion } from 'framer-motion';
