@@ -52,7 +52,7 @@ function Works() {
                   Super Barangay Cleaners: <br />A Third Person Shooter Game <br />Using Procedural Content Generation Algorithm
                 </Typography>
                 <img
-                  src='./portfoliowebsite/images/thesis.png'
+                  src={process.env.PUBLIC_URL + '/portfoliowebsite/images/thesis.png'}
                   alt="Thesis"
                   style={{ width: '100%', maxWidth: '600px', marginTop: '20px' }}
                 />
@@ -75,7 +75,7 @@ function Works() {
                   Reviewer App Python
                 </Typography>
                 <img
-                  src='./portfoliowebsite/images/reviewerApp.png'
+                  src={process.env.PUBLIC_URL + '/portfoliowebsite/images/reviewerApp.png'}
                   alt="Reviewer App"
                   style={{ width: '100%', maxWidth: '600px', marginTop: '20px' }}
                 />
@@ -98,7 +98,7 @@ function Works() {
                   Quiz Master Android Studio
                 </Typography>
                 <img
-                  src='./portfoliowebsite/images/quizMaster.png'
+                  src={process.env.PUBLIC_URL + '/portfoliowebsite/images/quizMaster.png'}
                   alt="Quiz Master"
                   style={{ width: '100%', maxWidth: '600px', marginTop: '20px' }}
                 />
