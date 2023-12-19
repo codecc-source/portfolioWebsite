@@ -45,7 +45,7 @@ function Contact() {
                     <img
                       src={process.env.PUBLIC_URL + '/images/emailClose.png'}
                       style={{ width: '50px', height: '50px' }}
-                      alt="Logo"
+                      alt="email"
                       className='emailOpen'
                     />
                   </a>
@@ -56,7 +56,7 @@ function Contact() {
                     <img
                       src={process.env.PUBLIC_URL + '/images/linked.png'}
                       style={{ width: '50px', height: '50px' }}
-                      alt="Logo"
+                      alt="linkedIn"
                     />
                   </a>
                 </Typography>
@@ -66,7 +66,7 @@ function Contact() {
                     <img
                       src={process.env.PUBLIC_URL + '/images/github.png'}
                       style={{ width: '50px', height: '50px' }}
-                      alt="Logo"
+                      alt="github"
                     />
                   </a>
                 </Typography>
