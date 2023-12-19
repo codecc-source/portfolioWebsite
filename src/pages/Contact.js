@@ -43,7 +43,7 @@ function Contact() {
                 <Typography component="div" id="emailLink" sx={{ textAlign: 'center', mt: 2 }}>
                   <a style={{ fontSize: '1.5rem', display: 'block', color: 'white', transition: 'transform 0.3s, filter 0.3s' }}>
                     <img
-                      src={'./portfoliowebsite/images/emailClose.png'}
+                      src={process.env.PUBLIC_URL + '/images/emailClose.png'}
                       style={{ width: '50px', height: '50px' }}
                       alt="Logo"
                       className='emailOpen'
@@ -54,7 +54,7 @@ function Contact() {
                 <Typography component="div" id="linkedIn" sx={{ textAlign: 'center', mt: 2 }}>
                   <a style={{ fontSize: '2rem', display: 'block' }} href="https://www.linkedin.com/in/carlito-jr-tingson-a00300275">
                     <img
-                      src={'./portfoliowebsite/images/linked.png'}
+                      src={process.env.PUBLIC_URL + '/images/linked.png'}
                       style={{ width: '50px', height: '50px' }}
                       alt="Logo"
                     />
@@ -64,7 +64,7 @@ function Contact() {
                 <Typography component="div" id="githubLink" sx={{ textAlign: 'center', mt: 2 }}>
                   <a style={{ fontSize: '2rem', display: 'block' }} href="https://github.com/codecc-source">
                     <img
-                      src={'./portfoliowebsite/images/github.png'}
+                      src={process.env.PUBLIC_URL + '/images/github.png'}
                       style={{ width: '50px', height: '50px' }}
                       alt="Logo"
                     />
