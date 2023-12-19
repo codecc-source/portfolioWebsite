@@ -14,7 +14,7 @@ function Works() {
   return (
     <motion.div
       initial={{ width: 0 }}
-      animate={{ width: "100%"}}
+      animate={{ width: '100%' }}
       exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
     >
       <ThemeProvider theme={theme}>
@@ -24,13 +24,13 @@ function Works() {
             justifyContent: 'center',
             alignItems: 'center',
             minHeight: '70vh',
-            flexDirection: 'column', // Set flex direction to column
+            flexDirection: 'column',
           }}
         >
           <Box>
             <Grid container justifyContent="center">
-              <Grid item xs={12}>
-                <Typography variant="h2" style={{ color: 'white' }} id="works">
+              <Grid item xs={12} style={{ textAlign: 'center', padding: '0 16px' }}>
+                <Typography variant="h3" style={{ color: 'yellow' }} id="works">
                   Works Page WIP
                 </Typography>
               </Grid>
@@ -47,37 +47,14 @@ function Works() {
             }}
           >
             <Grid container justifyContent="center">
-              <Grid item xs={12}>
+              <Grid item xs={12} style={{ textAlign: 'center' }}>
                 <Typography variant="h5" style={{ color: 'white' }}>
-                  Super Barangay Cleaners: <br/>A Third Person Shooter Game <br/>Using Procedural Content Generation Algorithm
+                  Super Barangay Cleaners: <br />A Third Person Shooter Game <br />Using Procedural Content Generation Algorithm
                 </Typography>
                 <img
-                  src="./images/thesis.png"
+                  src="./portfoliowebsite/images/thesis.png"
                   alt="Thesis"
-                  style={{ width: '500px', height: '300px', maxWidth: '600px', marginTop: '20px' }}
-                />
-              </Grid>
-            </Grid>
-          </Box>
-          
-          <Box
-            sx={{
-              background: 'linear-gradient(45deg, rgba(254,254,51, 0.1) 0%, rgba(0, 128, 255, 0.1) 100%)',
-              padding: '5vh',
-              margin: '20px',
-              borderRadius: '20px',
-              textAlign: 'center',
-            }}
-          >
-            <Grid container justifyContent="center">
-              <Grid item xs={12}>
-                <Typography variant="h4" style={{ color: 'white' }}>
-                  Reviewer App Python
-                </Typography>
-                <img
-                  src="./images/reviewerApp.png"
-                  alt="Reviewer App"
-                  style={{ width: '500px', height: '300px', maxWidth: '600px', marginTop: '20px' }}
+                  style={{ width: '100%', maxWidth: '600px', marginTop: '20px' }}
                 />
               </Grid>
             </Grid>
@@ -93,14 +70,37 @@ function Works() {
             }}
           >
             <Grid container justifyContent="center">
-              <Grid item xs={12}>
+              <Grid item xs={12} style={{ textAlign: 'center' }}>
+                <Typography variant="h4" style={{ color: 'white' }}>
+                  Reviewer App Python
+                </Typography>
+                <img
+                  src="./portfoliowebsite/images/reviewerApp.png"
+                  alt="Reviewer App"
+                  style={{ width: '100%', maxWidth: '600px', marginTop: '20px' }}
+                />
+              </Grid>
+            </Grid>
+          </Box>
+
+          <Box
+            sx={{
+              background: 'linear-gradient(45deg, rgba(254,254,51, 0.1) 0%, rgba(0, 128, 255, 0.1) 100%)',
+              padding: '5vh',
+              margin: '20px',
+              borderRadius: '20px',
+              textAlign: 'center',
+            }}
+          >
+            <Grid container justifyContent="center">
+              <Grid item xs={12} style={{ textAlign: 'center' }}>
                 <Typography variant="h4" style={{ color: 'white' }}>
                   Quiz Master Android Studio
                 </Typography>
                 <img
-                  src="./images/quizMaster.png"
+                  src="./portfoliowebsite/images/quizMaster.png"
                   alt="Quiz Master"
-                  style={{ width: '300px', height: '600px', maxWidth: '600px', marginTop: '20px' }}
+                  style={{ width: '100%', maxWidth: '600px', marginTop: '20px' }}
                 />
               </Grid>
             </Grid>
