@@ -51,12 +51,12 @@ function Works() {
                 <Typography variant="h5" style={{ color: 'white' }}>
                   Super Barangay Cleaners: <br />A Third Person Shooter Game <br />Using Procedural Content Generation Algorithm
                 </Typography>
-                <img
-                  src='/images/thesis.png'
+              </Grid>
+              <img
+                  src={process.env.PUBLIC_URL + '/images/thesis.png'}
                   alt="Thesis"
                   style={{ width: '100%', maxWidth: '600px', marginTop: '20px' }}
                 />
-              </Grid>
             </Grid>
           </Box>
 
@@ -74,12 +74,12 @@ function Works() {
                 <Typography variant="h4" style={{ color: 'white' }}>
                   Reviewer App Python
                 </Typography>
-                <img
-                  src='/images/reviewerApp.png'
+              </Grid>
+              <img
+                  src={process.env.PUBLIC_URL + '/images/reviewerApp.png'}
                   alt="Reviewer App"
                   style={{ width: '100%', maxWidth: '600px', marginTop: '20px' }}
                 />
-              </Grid>
             </Grid>
           </Box>
 
@@ -97,12 +97,12 @@ function Works() {
                 <Typography variant="h4" style={{ color: 'white' }}>
                   Quiz Master Android Studio
                 </Typography>
-                <img
-                  src='/images/quizMaster.png'
+              </Grid>
+              <img
+                  src={process.env.PUBLIC_URL + '/images/quizMaster.png'}
                   alt="Quiz Master"
                   style={{ width: '100%', maxWidth: '600px', marginTop: '20px' }}
                 />
-              </Grid>
             </Grid>
           </Box>
         </Box>
