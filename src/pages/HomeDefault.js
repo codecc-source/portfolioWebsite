@@ -51,14 +51,14 @@ function HomeDefault() {
                       Languages: {' '} <br/>
                       <ReactTyped style={{color: 'yellow', fontSize: '1.8rem'}} 
                       strings={[
-                        "React JS <img src={process.env.PUBLIC_URL + '/images/react.png'} alt='React' style='width: 25px; height: 25px;'/><img src={process.env.PUBLIC_URL + '/images/js.png'} alt='JS' style='width: 25px; height: 25px;'/>",
-                        "CSS <img src={process.env.PUBLIC_URL + '/images/css.png'} alt='CSS' style='width: 25px; height: 25px;'/>",
-                        "HTML <img src={process.env.PUBLIC_URL + '/images/html.png'} alt='HTML' style='width: 25px; height: 25px;'/>",
-                        "PHP<img src={process.env.PUBLIC_URL + '/images/php.png'} alt='PHP' style='width: 25px; height: 25px;'/>",
-                        "Python <img src={process.env.PUBLIC_URL + '/images/python.png'} alt='Python' style='width: 25px; height: 25px;'/>",
-                        "Unity C# <img src={process.env.PUBLIC_URL + '/images/unity.png'} alt='Unity' style='width: 25px; height: 25px;'/> <img src={process.env.PUBLIC_URL + '/images/csharp.png'} alt='C#' style='width: 25px; height: 25px;'/>",
-                        "C++ <img src={process.env.PUBLIC_URL + '/images/cpp.png'} alt='C++' style='width: 25px; height: 25px;'/>",
-                        "Java <img src={process.env.PUBLIC_URL + '/images/java.png'} alt='Java' style='width: 25px; height: 25px;'/>",
+                        "React JS <img src='./portfoliowebsite/images/react.png' alt='React' style='width: 25px; height: 25px;'/><img src='./portfoliowebsite/images/js.png' alt='JS' style='width: 25px; height: 25px;'/>",
+                        "CSS <img src='./portfoliowebsite/images/css.png' alt='CSS' style='width: 25px; height: 25px;'/>",
+                        "HTML <img src='./portfoliowebsite/images/html.png' alt='HTML' style='width: 25px; height: 25px;'/>",
+                        "PHP<img src='./portfoliowebsite/images/php.png' alt='PHP' style='width: 25px; height: 25px;'/>",
+                        "Python <img src='./portfoliowebsite/images/python.png' alt='Python' style='width: 25px; height: 25px;'/>",
+                        "Unity C# <img src='./portfoliowebsite/images/unity.png' alt='Unity' style='width: 25px; height: 25px;'/> <img src='./portfoliowebsite/images/csharp.png' alt='C#' style='width: 25px; height: 25px;'/>",
+                        "C++ <img src='./portfoliowebsite/images/cpp.png' alt='C++' style='width: 25px; height: 25px;'/>",
+                        "Java <img src='./portfoliowebsite/images/java.png' alt='Java' style='width: 25px; height: 25px;'/>",
                       ]} 
                       typeSpeed={70} loop />
                   </Typography>
