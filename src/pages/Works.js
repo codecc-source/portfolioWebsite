@@ -231,7 +231,7 @@ function Works() {
                   </Typography>
                 </Grid>
                 <img
-                  src={process.env.PUBLIC_URL + '/images/bee.png'}
+                  src={process.env.PUBLIC_URL +'/images/bee.png'}
                   alt="Bee Sensors"
                   style={{ width: '100%', maxWidth: '600px', marginTop: '20px' }}
                 />
