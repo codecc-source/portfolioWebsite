@@ -19,6 +19,7 @@ function Works() {
 
   const listofFeatures1 = ['Adding notes', 'Using images as notes', 'Reviewing notes', 'Editing notes', 'Clearing notes', 'Exporting notes as DOCX files', 'Saving/Loading notes as JSON files', 'Saving notes as mp3 files (uses GTTS)', 'Minigame like scoring system'];
   const listofFeatures2 = ['Separate login for students/teachers', 'Quiz Taker', 'Attendance Checker', 'Grades Editor', 'Spell Checker', 'Registration'];
+  const listofFeatures3 = ['Humidity Sensor', 'Temperature Sensor', 'Buzz Alarm', 'Bluetooth Alerts'];
 
   return (
     <motion.div
@@ -195,6 +196,115 @@ function Works() {
                     </ul>
                   </Typography>
                 </Grid>
+            </Box>
+          )}
+
+          <Box
+            sx={{
+              width: '60%',
+              background: 'linear-gradient(45deg, rgba(254,254,51, 0.1) 0%, rgba(0, 128, 255, 0.1) 100%)',
+              padding: '5vh',
+              margin: '20px',
+              borderRadius: '20px',
+              textAlign: 'center',
+            }}
+          >
+              <Button onClick={() => toggleProjectVisibility(4)} style={{fontSize: '2rem', color: 'yellow'}}>
+                {visibleProject === 3 ? 'Bee Sensor' : 'Bee Sensor'}
+              </Button>
+          </Box>
+
+          {visibleProject === 4 && (
+            <Box
+              sx={{
+                background: 'linear-gradient(45deg, rgba(254,254,51, 0.1) 0%, rgba(0, 128, 255, 0.1) 100%)',
+                padding: '5vh',
+                margin: '20px',
+                borderRadius: '20px',
+                textAlign: 'center',
+              }}
+            >
+              <Grid container justifyContent="center">
+                <Grid item xs={12} style={{ textAlign: 'center' }}>
+                  <Typography variant="h4" style={{ color: 'white' }}>
+                    Bee Sensors <img src='/portfoliowebsite/images/cpp.png' alt='c++' style={{width: '25px', height: '25px'}}/>
+                  </Typography>
+                </Grid>
+                <img
+                  src={process.env.PUBLIC_URL + '/images/bee.png'}
+                  alt="Bee Sensors"
+                  style={{ width: '100%', maxWidth: '600px', marginTop: '20px' }}
+                />
+              </Grid>
+              <Grid item xs={12} style={{ textAlign: 'center' }}>
+                  <Typography variant="h5" style={{ color: 'white' }}>
+                    Arduino project that aids in monitoring bee farms <br/>
+                    Features: <br/>
+                    <ul style={{color: 'aquamarine'}}>
+                      {listofFeatures3.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </Typography>
+                </Grid>
+            </Box>
+          )}
+
+          <Box
+            sx={{
+              width: '60%',
+              background: 'linear-gradient(45deg, rgba(254,254,51, 0.1) 0%, rgba(0, 128, 255, 0.1) 100%)',
+              padding: '5vh',
+              margin: '20px',
+              borderRadius: '20px',
+              textAlign: 'center',
+            }}
+          >
+              <Button onClick={() => toggleProjectVisibility(5)} style={{fontSize: '2rem', color: 'yellow'}}>
+                {visibleProject === 5 ? 'Other school works' : 'Other school works'}
+              </Button>
+          </Box>
+
+          {visibleProject === 5 && (
+            <Box
+              sx={{
+                background: 'linear-gradient(45deg, rgba(254,254,51, 0.1) 0%, rgba(0, 128, 255, 0.1) 100%)',
+                padding: '5vh',
+                margin: '20px',
+                borderRadius: '20px',
+                textAlign: 'center',
+              }}
+            >
+              <Grid container justifyContent="center">
+                <Grid item xs={12} style={{ textAlign: 'center' }}>
+                  <Typography variant="h4" style={{ color: 'white' }}>
+                  Other school works
+                  </Typography>
+                </Grid>
+              </Grid>
+              <Grid item xs={12} style={{ textAlign: 'center' }}>
+                <Typography variant="h5" style={{ color: 'white' }}>
+                  School projects <br />
+                  Features: <br />
+                  <ul style={{ color: 'aquamarine' }}>
+
+                  </ul>
+                  <div style={{ display: 'block' }}>
+                    <a href={'https://github.com/codecc-source/PythonSchoolWorks'} target="_blank">
+                      <Button variant="contained" style={{ fontSize: '1rem', color: 'yellow' }}>
+                        Python School Projects
+                      </Button>
+                    </a>
+                  </div>
+                  <div style={{ display: 'block', marginTop: '10px' }}>
+                  <a href={'https://github.com/codecc-source/CPPProjectFiles'} target="_blank">
+                      <Button variant="contained" style={{ fontSize: '1rem', color: 'yellow' }}>
+                        C++ School Projects
+                      </Button>
+                    </a>
+                  </div>
+                </Typography>
+              </Grid>
             </Box>
           )}
         </Box>

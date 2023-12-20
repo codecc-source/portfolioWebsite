@@ -128,7 +128,7 @@ function NavigationBar({ onPageClick }) {
           <Typography
             noWrap
             component="a"
-            href="#palceholder plng to"
+            href="#"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
