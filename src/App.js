@@ -103,7 +103,7 @@ function App() {
                 {renderPageContent()}
                 <motion.img
                   id='myImage'
-                  src='/portfoliowebsite/images/unity.png'
+                  src='/portfoliowebsite/images/red.png'
                   style={{
                     width: '100px',
                     height: '100px',
