@@ -57,7 +57,7 @@ function App() {
     }
   }
 
-  setInterval(imgInterval, 5000);
+  setInterval(imgInterval, 20000);
 
   return (
     <div>
