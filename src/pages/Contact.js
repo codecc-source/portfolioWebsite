@@ -41,7 +41,7 @@ function Contact() {
                 </Typography>
 
                 <Typography component="div" id="emailLink" sx={{ textAlign: 'center', mt: 2 }}>
-                  <a style={{ fontSize: '1.5rem', display: 'block', color: 'white', transition: 'transform 0.3s, filter 0.3s' }}>
+                  <a style={{ fontSize: '1.5rem', display: 'block', color: 'white', transition: 'transform 0.3s, filter 0.3s'}} href="mailto:carlitotingson.work@gmail.com" >
                     <img
                       src={process.env.PUBLIC_URL + '/images/emailClose.png'}
                       style={{ width: '50px', height: '50px' }}
