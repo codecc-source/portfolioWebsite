@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import NavigationBar from './NavigationBar';
 import { Box } from '@mui/material';
@@ -12,6 +12,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('HOME');
+  const [showCursor, setShowCursor] = useState(true);
 
   const handlePageClick = (page) => {
     setCurrentPage(page);
@@ -20,65 +21,110 @@ function App() {
   const renderPageContent = () => {
     switch (currentPage) {
       case 'WORKS':
-        return <Works/>;
+        return <Works />;
       case 'ABOUT':
-        return <About/>;
+        return <About />;
       case 'CONTACT':
-        return <Contact/>;
+        return <Contact />;
       default:
-        return (
-         <HomeDefault/>
-        );
+        return <HomeDefault />;
     }
   };
 
-return (
-  <div>
-    <AnimatedCursor
-      innerSize={10}
-      outerSize={35}
-      color='255, 255, 255'
-      outerAlpha={0.2}
-      innerScale={0.7}
-      outerScale={5}
-      clickables={[
-        'a',
-        'input[type="text"]',
-        'input[type="email"]',
-        'input[type="number"]',
-        'input[type="submit"]',
-        'input[type="image"]',
-        'label[for]',
-        'select',
-        'textarea',
-        'button',
-        '.link'
-      ]}
-    />
-    <Box sx={{ height: '100vh', width: '100vw', position: 'relative' }}>
-      <div style={{ zIndex: 1, width: '100%', height: '100%', overflow: 'scroll' }}> {/* */}
-        <BackgroundParticles />
+  useEffect(() => {
+    const handleResize = () => {
+      setShowCursor(window.innerWidth > 700);
+    };
 
-        <Box sx={{ backgroundColor: 'black' }}>
-          <NavigationBar onPageClick={handlePageClick} />
-        </Box>
+    handleResize();
+    window.addEventListener('resize', handleResize);
 
-        <Box sx={{ position: 'relative', zIndex: 2 }}>
-          <AnimatePresence>
-            <motion.div
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  let isImageVisible = true;
+  function imgInterval() {
+    var myImage = document.getElementById("myImage");
+
+    if (isImageVisible) {
+      myImage.style.display = "none";
+      isImageVisible = false;
+    } else {
+      myImage.style.display = "block";
+      isImageVisible = true;
+    }
+  }
+
+  setInterval(imgInterval, 5000);
+
+  return (
+    <div>
+      {showCursor && (
+        <AnimatedCursor
+          innerSize={10}
+          outerSize={35}
+          color='255, 255, 255'
+          outerAlpha={0.2}
+          innerScale={0.7}
+          outerScale={5}
+          clickables={[
+            'a',
+            'input[type="text"]',
+            'input[type="email"]',
+            'input[type="number"]',
+            'input[type="submit"]',
+            'input[type="image"]',
+            'label[for]',
+            'select',
+            'textarea',
+            'button',
+            '.link',
+          ]}
+        />
+      )}
+      <Box sx={{ height: '100vh', width: '100vw', position: 'relative' }}>
+        <div style={{ zIndex: 1, width: '100%', height: '100%', overflow: 'scroll' }}>
+          <BackgroundParticles />
+
+          <Box sx={{ backgroundColor: 'black' }}>
+            <NavigationBar onPageClick={handlePageClick} />
+          </Box>
+
+          <Box sx={{ position: 'relative', zIndex: 2 }}>
+            <AnimatePresence>
+              <motion.div
                 key={currentPage}
                 initial={{ width: 0 }}
-                animate={{ width: "100%"}}
-                exit={{ x: window.innerWidth, transition: {duration: 0.1}}}
+                animate={{ width: '100%' }}
+                exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
               >
-                {renderPageContent()} 
+                {renderPageContent()}
+                <motion.img
+                  id='myImage'
+                  src='/portfoliowebsite/images/unity.png'
+                  style={{
+                    width: '100px',
+                    height: '100px',
+                    position: 'absolute',
+                    top: '50%',
+                    left: 0, 
+                  }}
+                  alt='red'
+                  animate={{
+                    left: window.innerWidth - 100,
+                    rotate: 360, 
+                    transition: { duration: 5, ease: 'linear', repeat: Infinity },
+                  }} 
+                />
               </motion.div>
-          </AnimatePresence>
-        </Box>
-      </div>
-    </Box>
-  </div>
-);
+            </AnimatePresence>
+          </Box>
+        </div>
+      </Box>
+    </div>
+  );
 }
 
 export default App;
