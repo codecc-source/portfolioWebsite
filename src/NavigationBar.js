@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-const pages = ['WORKS', 'ABOUT', 'CONTACT'];
+const pages = ['WORKS', 'ABOUT', 'CONTACT', 'QUIZLET'];
 
 function NavigationBar({ onPageClick }) {
   const [clickedPage, setClickedPage] = React.useState(null);

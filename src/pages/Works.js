@@ -65,7 +65,7 @@ function Works() {
               <Grid container justifyContent="center">
                 <Grid item xs={12} style={{ textAlign: 'center' }}>
                   <Typography variant="h5" style={{ color: 'yellow' }}>
-                    Super Barangay Cleaners: <img src='/portfoliowebsite/images/unity.png' alt='unity' style={{width: '25px', height: '25px'}}/> <br />A Third Person Shooter Game <br />Using Procedural Content Generation Algorithm
+                    👾🔫Super Barangay Cleaners: <img src='/portfoliowebsite/images/unity.png' alt='unity' style={{width: '25px', height: '25px'}}/> <br />A Third Person Shooter Game <br />Using Procedural Content Generation Algorithm
                   </Typography>
                 </Grid>
                 <img

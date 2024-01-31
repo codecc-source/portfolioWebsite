@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 import { Box, Grid, Typography, Button } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ReactTyped from 'react-typed';
 import { motion } from 'framer-motion';
+import axios from 'axios';
 
 function HomeDefault() {
   const theme = createTheme({
@@ -12,14 +13,32 @@ function HomeDefault() {
     },
   });
 
-  const todoList = ["Create basic layout", "Change background to TSParticles", "Change navigation bar", "Fix navigation bar", "Add pages and content","Utilize some other libraries", "Add 'the image'", "Add to do list", "Add some sort of backend to project", "Link python note app", "Add weather app"];
-  const completedList = [0,1,2,3,4,5,6,7];
+  const todoList = ["Create basic layout", "Change background to TSParticles", "Change navigation bar", "Fix navigation bar", "Add pages and content","Utilize some other libraries", "Add 'the image'", "Add to do list", "Add some sort of backend to project", "Link python note app", "Add weather app", "Fix weather part", "Fix quizlet"];
+  const completedList = [0,1,2,3,4,5,6,7,8,10];
 
   const [visibleProject, setVisibleProject] = useState(null);
 
   const toggleProjectVisibility = (projectId) => {
     setVisibleProject(visibleProject === projectId ? null : projectId);
   };
+
+  //weather part
+  const [weather, setWeather] = useState(null);
+  const [loadingWeather, setLoadingWeather] = useState(true);
+
+  useEffect(() => {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q={BACOLOD}&appid={fe8617a34904dbb2b7610757a7c53b47}&units=metric`)
+      .then(response => {
+        setWeather(response.data);
+        setLoadingWeather(false);
+      })
+      .catch(error => {
+        console.error('Error fetching weather data:', error.response.data.message);
+        setLoadingWeather(false);
+      });
+  }, []);
+  
+  
 
   return (
     <motion.div
@@ -76,6 +95,21 @@ function HomeDefault() {
             </Grid>
           </Box>
         </Box>
+        
+        <Box>
+          <div style={{color: 'white', textAlign: 'center'}}>
+          {loadingWeather ? (
+            <Typography>Loading weather...</Typography>
+          ) : weather ? (
+            <Typography>
+              Weather in {weather.name}: {weather.weather[0].description}, {weather.main.temp}°C
+            </Typography>
+          ) : (
+            <Typography>Weather data not available</Typography>
+          )}
+          </div>
+        </Box>
+
         <Box
           sx={{
             display: 'flex',

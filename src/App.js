@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import HomeDefault from './pages/HomeDefault';
 import AnimatedCursor from 'react-animated-cursor';
 import {motion, AnimatePresence} from 'framer-motion';
+import Quizlet from './pages/Quizlet';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('HOME');
@@ -27,6 +28,8 @@ function App() {
         return <About />;
       case 'CONTACT':
         return <Contact />;
+      case 'QUIZLET':
+        return <Quizlet/>
       default:
         return <HomeDefault />;
    }
